@@ -8,6 +8,7 @@
   --color-stone: #6f685c;
   --color-stone-light: #c9c1b2;
   --color-brass: #8a6f3a;
+--color-brass-light: #c4a56a;
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -23,5 +24,6 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
+  .bg-navy :focus-visible { outline-color: var(--color-ivory); }
   /* ...keep the existing body, headings and focus rules */
 }
