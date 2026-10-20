@@ -37,3 +37,22 @@ export const guestInfo = [
   { label: 'Children', value: 'Welcome. Cots can be added to any room.' },
   { label: 'Pets', value: 'Not accommodated at present.' },
 ];
+export const policies = {
+  privacy: {
+    title: 'Privacy policy',
+    body: [
+      'Sample text for demonstration. The final policy will be supplied by the hotel.',
+      'This demo site does not collect or store any personal data. The availability search runs entirely in your browser and nothing is sent to a server.',
+    ],
+  },
+  terms: {
+    title: 'Terms of use',
+    body: [
+      'Sample text for demonstration. The final terms will be supplied by the hotel.',
+      'Rates and availability shown on this site are mock data and cannot be booked.',
+    ],
+  },
+};
+
+export const footerBlurb =
+  'Twelve rooms above Bhimtal lake, with a kitchen built around what grows nearby.';
