@@ -52,6 +52,7 @@ export const policies = {
       'Rates and availability shown on this site are mock data and cannot be booked.',
     ],
   },
+  
 };
 
 export const footerBlurb =
