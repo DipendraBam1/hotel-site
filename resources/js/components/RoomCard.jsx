@@ -4,7 +4,7 @@ const money = new Intl.NumberFormat('en-IN', {
 
 export default function RoomCard({ room, reverse }) {
   return (
-    <article className="grid items-center gap-6 md:grid-cols-12 md:gap-10">
+    <article id={room.id} className="grid items-center gap-6 md:grid-cols-12 md:gap-10">
       <img
         src={room.image}
         alt={room.alt}

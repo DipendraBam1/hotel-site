@@ -15,8 +15,7 @@ export default function HotelFooter() {
   const headingClass = 'text-xs uppercase tracking-[0.14em] text-brass-light';
 
   return (
-    <footer className="bg-charcoal text-ivory">
-      <div className="mx-auto grid max-w-[1200px] gap-12 px-5 py-16 md:grid-cols-12 md:px-12 md:py-20">
+<footer className="bg-charcoal pb-16 text-ivory sm:pb-0">      <div className="mx-auto grid max-w-[1200px] gap-12 px-5 py-16 md:grid-cols-12 md:px-12 md:py-20">
         <div className="md:col-span-5">
           <p className="font-display text-4xl">{hotel.name}</p>
           <p className="mt-4 max-w-[36ch] text-ivory/80">{footerBlurb}</p>

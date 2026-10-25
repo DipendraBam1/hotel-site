@@ -56,3 +56,22 @@ export const policies = {
 
 export const footerBlurb =
   'Twelve rooms above Bhimtal lake, with a kitchen built around what grows nearby.';
+
+  export const faqs = [
+  {
+    q: 'Can I check in early or check out late?',
+    a: 'Standard times are 2:00 PM and 11:00 AM. Early check-in and late check-out depend on availability, so message us before you arrive and we will do our best.',
+  },
+  {
+    q: 'What is your cancellation policy?',
+    a: 'Sample text for demonstration. The hotel will supply its real cancellation terms before launch.',
+  },
+  {
+    q: 'Can you cater for dietary requirements?',
+    a: 'Yes. Tell us about allergies or preferences when you book and the kitchen will plan around them.',
+  },
+  {
+    q: 'Can you arrange transfers?',
+    a: 'We can arrange a driver from Kathgodam station or nearby towns. Please give us your arrival time at least a day ahead.',
+  },
+];

@@ -12,6 +12,9 @@ import { experiences } from "./data/experiences";
 import PropertyStory from "./components/PropertyStory";
 import LocationInfo from "./components/LocationInfo";
 import HotelFooter from "./components/HotelFooter";
+import StickyBookBar from "./components/StickyBookBar";
+import FaqSection from "./components/FaqSection";
+import GallerySection from "./components/GallerySection";
 
 function App() {
     return (
@@ -25,9 +28,13 @@ function App() {
                     <ExperienceSection key={e.id} experience={e} />
                 ))}
                 <PropertyStory />
+                <GallerySection />
+
+                <FaqSection />
                 <LocationInfo />
-                <HotelFooter />
             </main>
+            <HotelFooter />
+            <StickyBookBar />
         </>
     );
 }

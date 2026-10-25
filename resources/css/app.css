@@ -5,9 +5,9 @@
   --color-ivory-deep: #ece4d4;
   --color-charcoal: #2a2a28;
   --color-navy: #14213d;
-  --color-stone: #6f685c;
+  --color-stone: #5f594f;
   --color-stone-light: #c9c1b2;
-  --color-brass: #8a6f3a;
+  --color-brass: #7a5f2c;
   --color-brass-light: #c4a56a;
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -37,4 +37,5 @@
   .bg-charcoal dialog :focus-visible {
     outline-color: var(--color-navy);
   }
+  dialog.bg-navy :focus-visible { outline-color: var(--color-ivory); }
 }

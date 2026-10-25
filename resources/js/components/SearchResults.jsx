@@ -32,8 +32,12 @@ export default function SearchResults({ result }) {
         {options.map((o) => (
           <li key={o.id} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="font-display text-2xl">{o.name}</p>
-              <p className="text-sm text-stone">Sleeps {o.capacity}</p>
+<p className="font-display text-2xl">
+  <a href={`#${o.id}`} className="underline decoration-stone-light underline-offset-4 hover:text-brass">
+    {o.name}
+    <span className="sr-only"> room details</span>
+  </a>
+</p>              <p className="text-sm text-stone">Sleeps {o.capacity}</p>
             </div>
             {o.available ? (
               <p className="sm:text-right">
