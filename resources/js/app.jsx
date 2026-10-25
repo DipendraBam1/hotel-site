@@ -2,6 +2,7 @@ import "../css/app.css";
 import "@fontsource/cormorant-garamond/500.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
+import { useState } from 'react';
 import { createRoot } from "react-dom/client";
 import HotelHeader from "./components/HotelHeader";
 import HotelHero from "./components/HotelHero";
@@ -15,15 +16,23 @@ import HotelFooter from "./components/HotelFooter";
 import StickyBookBar from "./components/StickyBookBar";
 import FaqSection from "./components/FaqSection";
 import GallerySection from "./components/GallerySection";
+import EnquirySection from "./components/EnquirySection";
+import OffersSection from "./components/OffersSection";
 
 function App() {
+      const [selectedRoomId, setSelectedRoomId] = useState(null);   // 2. must be inside App
+
     return (
         <>
             <HotelHeader />
-            <main id="top">
+            <main id="top" tabIndex={-1} className="outline-none">
                 <HotelHero />
-                <AvailabilitySearch />
-                <RoomsSection />
+                <AvailabilitySearch
+                    selectedRoomId={selectedRoomId}
+                    onClearRoom={() => setSelectedRoomId(null)}
+                />
+                <RoomsSection onSelectRoom={setSelectedRoomId} />
+                <OffersSection onSelectRoom={setSelectedRoomId} />
                 {experiences.map((e) => (
                     <ExperienceSection key={e.id} experience={e} />
                 ))}
@@ -31,6 +40,7 @@ function App() {
                 <GallerySection />
 
                 <FaqSection />
+                <EnquirySection />
                 <LocationInfo />
             </main>
             <HotelFooter />

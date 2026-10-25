@@ -16,7 +16,7 @@ export default function HotelHero() {
         <img
           src="/images/hero.jpg"
           alt="Lakeside facade of Alder House at dusk with lit windows"
-          width="900" height="1100" fetchpriority="high"
+          width="900" height="1100" fetchPriority="high"
           className="order-first aspect-[4/3] w-full object-cover md:order-2 md:aspect-[4/4.2] md:max-h-[560px]"
         />
       </div>

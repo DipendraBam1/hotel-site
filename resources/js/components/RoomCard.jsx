@@ -2,8 +2,7 @@ const money = new Intl.NumberFormat('en-IN', {
   style: 'currency', currency: 'INR', maximumFractionDigits: 0,
 });
 
-export default function RoomCard({ room, reverse }) {
-  return (
+export default function RoomCard({ room, reverse, onSelect }) {  return (
     <article id={room.id} className="grid items-center gap-6 md:grid-cols-12 md:gap-10">
       <img
         src={room.image}
@@ -37,6 +36,7 @@ export default function RoomCard({ room, reverse }) {
           </p>
           <a
             href="#availability"
+              onClick={() => onSelect?.(room.id)}
             className="border border-navy px-6 py-3 text-sm tracking-wider text-navy hover:bg-navy hover:text-ivory"
           >
             Check availability

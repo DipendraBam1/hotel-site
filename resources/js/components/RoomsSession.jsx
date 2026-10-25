@@ -1,8 +1,8 @@
 import RoomCard from './RoomCard';
 import { rooms } from '../data/rooms';
 
-export default function RoomsSection() {
-  return (
+export default function RoomsSection({ onSelectRoom }) {
+    return (
     <section id="rooms" aria-labelledby="rooms-title" className="py-16 md:py-24">
       <div className="mx-auto max-w-[1200px] px-5 md:px-12">
         <div className="max-w-[52ch]">
@@ -15,8 +15,7 @@ export default function RoomsSection() {
 
         <div className="mt-12 space-y-16 md:mt-16 md:space-y-24">
           {rooms.map((room, i) => (
-            <RoomCard key={room.id} room={room} reverse={i % 2 === 1} />
-          ))}
+<RoomCard key={room.id} room={room} reverse={i % 2 === 1} onSelect={onSelectRoom} />          ))}
         </div>
       </div>
     </section>
