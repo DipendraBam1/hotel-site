@@ -18,10 +18,32 @@ import FaqSection from "./components/FaqSection";
 import GallerySection from "./components/GallerySection";
 import EnquirySection from "./components/EnquirySection";
 import OffersSection from "./components/OffersSection";
-
+import AuthPage from "./components/AuthPage";
+import { hotel } from './data/hotel';
 function App() {
       const [selectedRoomId, setSelectedRoomId] = useState(null);   // 2. must be inside App
-
+  const path = window.location.pathname;
+  const authMode = path === '/login' ? 'login' : path === '/register' ? 'signup' : null;
+if (authMode) {
+  return (
+    <>
+      <header className="border-b border-stone-light bg-ivory">
+        <div className="mx-auto flex min-h-[72px] max-w-[1200px] items-center justify-between gap-6 px-5 md:px-12">
+          <a href="/" className="font-display text-3xl tracking-wide">
+            {hotel.name}
+          </a>
+          <a href="/" className="text-sm tracking-wider hover:text-brass">
+            Back to site
+          </a>
+        </div>
+      </header>
+      <main id="top" tabIndex={-1} className="outline-none">
+        <AuthPage mode={authMode} />
+      </main>
+      <HotelFooter />
+    </>
+  );
+}
     return (
         <>
             <HotelHeader />
