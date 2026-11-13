@@ -83,7 +83,8 @@ useEffect(() => {
               </label>
             );
           }
-          if (f.type === 'select') {
+if (f.type === 'select') {
+  const list = f.options ?? options[f.name];
   return (
     <div key={f.name}>
       <FormField
@@ -96,16 +97,15 @@ useEffect(() => {
         error={errors[f.name]}
         onChange={(e) => set(f.name, e.target.value)}
       >
-        <option value="">{options[f.name] ? 'Choose an option' : 'Loading…'}</option>
-        {(options[f.name] ?? []).map((o) => (
+        <option value="">{list ? 'Choose an option' : 'Loading…'}</option>
+        {(list ?? []).map((o) => (
           <option key={o.value} value={o.value}>{o.label}</option>
         ))}
       </FormField>
     </div>
   );
 }
-          const area = f.type === 'textarea' || f.type === 'lines';
-          return (
+const area = ['textarea', 'lines', 'pairs'].includes(f.type);          return (
             <div key={f.name} className={area || f.wide ? 'sm:col-span-2' : ''}>
               <FormField
                 id={`f-${f.name}`}
