@@ -68,3 +68,26 @@ export const enquiriesApi = {
     return respond(enquiries.find((e) => e.id === id));
   },
 };
+const monthLabels = (n) =>
+  Array.from({ length: n }, (_, i) => {
+    const d = new Date();
+    d.setMonth(d.getMonth() - (n - 1 - i), 1);
+    return d.toLocaleDateString('en-GB', { month: 'short', year: '2-digit' });
+  });
+
+/*
+ * SAMPLE ANALYTICS. These numbers are invented for the demonstration.
+ * To connect Laravel, replace get() with fetch('/api/admin/analytics'),
+ * returning this same shape, calculated from the bookings table.
+ */
+export const analyticsApi = {
+  get: () =>
+    respond({
+      months: monthLabels(6),
+      revenue: [18400, 21200, 24800, 22100, 27600, 31200],
+      bookings: [32, 36, 41, 38, 46, 52],
+      weekly: [9, 11, 10, 13, 12, 15, 14, 17],
+      occupancy: { 'garden-room': 72, 'lake-suite': 64, 'heritage-villa': 41 },
+      averageStay: 2.8,
+    }),
+};

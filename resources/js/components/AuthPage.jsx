@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import FormField from './FormField';
 import { validateLogin, validateSignup } from '../../utils/validateAuth';
-
+import { DEMO_ADMIN, signIn } from '../auth/demoAuth';
 const initial = { name: '', email: '', password: '', confirm: '', agree: false, show: false };
 
 export default function AuthPage({ mode }) {
@@ -11,7 +11,7 @@ export default function AuthPage({ mode }) {
   const [values, setValues] = useState(initial);
   const [errors, setErrors] = useState({});
   const [done, setDone] = useState(null);
-
+  const [loginError, setLoginError] = useState('');
   useEffect(() => {
     if (done) doneRef.current?.focus();
   }, [done]);
@@ -19,18 +19,23 @@ export default function AuthPage({ mode }) {
   function update(field, value) {
     setValues((v) => ({ ...v, [field]: value }));
     setErrors((e) => ({ ...e, [field]: undefined }));
+    setLoginError('');
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     const found = signup ? validateSignup(values) : validateLogin(values);
     setErrors(found);
-    if (Object.keys(found).length > 0) {
-      requestAnimationFrame(() => {
-        formRef.current?.querySelector('[data-invalid="true"] input')?.focus();
-      });
-      return;
-    }
+if (!signup) {
+  if (signIn(values.email, values.password)) {
+    window.location.assign('/hotel-admin');
+    return;
+  }
+  setLoginError('The email or password is incorrect.');
+  setValues((v) => ({ ...v, password: '' }));
+  requestAnimationFrame(() => document.getElementById('email')?.focus());
+  return;
+}
     // Demo only: nothing is sent or stored. Laravel auth replaces this later.
     setDone({ name: values.name.trim(), email: values.email.trim() });
     setValues((v) => ({ ...v, password: '', confirm: '', show: false }));
@@ -78,6 +83,11 @@ export default function AuthPage({ mode }) {
             </div>
           ) : (
             <form ref={formRef} onSubmit={handleSubmit} noValidate className="grid gap-5">
+              {loginError && (
+  <p role="alert" className="text-red-800">
+    <span className="font-medium">Error: </span>{loginError}
+  </p>
+)}
               {signup && (
                 <FormField id="name" label="Full name" required autoComplete="name"
                            value={values.name} error={errors.name}
@@ -97,7 +107,15 @@ export default function AuthPage({ mode }) {
                            value={values.confirm} error={errors.confirm}
                            onChange={(e) => update('confirm', e.target.value)} />
               )}
-
+{!signup && (
+  <p className="mt-6 max-w-[36ch] border-l-2 border-brass pl-4 text-sm text-stone">
+    <span className="font-medium text-charcoal">Demo admin account</span>
+    <br />
+    Email: {DEMO_ADMIN.email}
+    <br />
+    Password: {DEMO_ADMIN.password}
+  </p>
+)}
               <label className="flex items-center gap-3 text-sm">
                 <input type="checkbox" checked={values.show}
                        onChange={(e) => update('show', e.target.checked)}
