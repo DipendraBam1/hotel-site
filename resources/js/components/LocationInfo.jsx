@@ -32,7 +32,7 @@ function MapPlaceholder() {
           Alder House
         </text>
         <text x="410" y="170" className="fill-charcoal" fontSize="16" fontFamily="Inter, sans-serif">
-          Bhimtal lake
+          Windermere
         </text>
         <text x="30" y="318" className="fill-charcoal" fontSize="14" fontFamily="Inter, sans-serif">
           Lakeview Road

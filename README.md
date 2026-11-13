@@ -2,7 +2,7 @@
 
 Frontend assignment for ArikarTech (Day 2). A homepage for a fictional five-star hotel, built as a React interface inside a single Laravel application.
 
-**Alder House** is a fictional twelve-room hotel above Bhimtal lake, Uttarakhand. All content, rates, contact details and policies are placeholders created for this exercise.
+**Alder House** is a fictional twelve-room hotel above Windermere. All content, rates, contact details and policies are placeholders created for this exercise.
 
 ## Stack and versions
 

@@ -5,7 +5,7 @@ export default function HotelHero() {
     <section aria-labelledby="hero-title" className="py-10">
       <div className="mx-auto grid max-w-[1200px] items-center gap-6 px-5 md:grid-cols-[5fr_6fr] md:gap-16 md:px-12">
         <div className="md:order-1">
-          <p className="mb-4 text-xs uppercase tracking-[0.14em] text-brass">Bhimtal, Uttarakhand</p>
+          <p className="mb-4 text-xs uppercase tracking-[0.14em] text-brass">Windermere, Cumbria</p>
           <h1 id="hero-title" className="text-[clamp(2.5rem,5vw,4.25rem)]">{hotel.tagline}</h1>
           <p className="my-6 max-w-[34ch] text-stone">{hotel.intro}</p>
           <a href="#availability"

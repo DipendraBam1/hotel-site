@@ -7,3 +7,4 @@ Route::get('/', function () {
 });
 Route::view('/login', 'welcome');
 Route::view('/register', 'welcome');
+Route::view('/hotel-admin/{any?}', 'welcome')->where('any', '.*');

@@ -2,9 +2,9 @@ export const hotel = {
   name: 'Alder House',
   tagline: 'A quiet house on the water.',
   intro:
-    'Twelve rooms above a still lake in the Kumaon hills, with a kitchen built around what grows nearby.',
-  address: 'Lakeview Road, Bhimtal, Uttarakhand 263136, India',
-  phone: '+91 00000 00000',
+    'Twelve rooms above a still lake in the Lake District, with a kitchen built around what grows nearby.',
+  address: 'Lakeview Road, Windermere, Cumbria LA23 0AA, United Kingdom',
+  phone: '+44 0000 000000',
   email: 'stay@alderhouse.example',
   checkIn: '2:00 PM',
   checkOut: '11:00 AM',
@@ -19,7 +19,7 @@ export const story = {
   eyebrow: 'The house',
   title: 'A farmhouse, slowly turned into a hotel',
   paragraphs: [
-    'Alder House began as a family farmhouse above Bhimtal lake. We kept the stone walls and the orchard, restored the timber, and added only what a good stay needs: quiet rooms, a real kitchen, and plenty of time outdoors.',
+    'Alder House began as a family farmhouse above Windermere. We kept the stone walls and the orchard, restored the timber, and added only what a good stay needs: quiet rooms, a real kitchen, and plenty of time outdoors.',
     'There are twelve rooms, so the house never feels full. Most of the team lives within a few kilometres, and the menu follows what nearby farms are harvesting.',
   ],
   facts: [
@@ -32,7 +32,7 @@ export const story = {
 };
 
 export const guestInfo = [
-  { label: 'Getting here', value: 'About 35 km from Kathgodam station, around 1 hr 15 min by road. We can arrange a driver.' },
+  { label: 'Getting here', value: 'About 35 km from Windermere station, about 6 miles, 15 minutes by road. We can arrange a driver.' },
   { label: 'Parking', value: 'Free on-site parking for guests.' },
   { label: 'Children', value: 'Welcome. Cots can be added to any room.' },
   { label: 'Pets', value: 'Not accommodated at present.' },
@@ -56,7 +56,7 @@ export const policies = {
 };
 
 export const footerBlurb =
-  'Twelve rooms above Bhimtal lake, with a kitchen built around what grows nearby.';
+  'Twelve rooms above Windermere , with a kitchen built around what grows nearby.';
 
   export const faqs = [
   {

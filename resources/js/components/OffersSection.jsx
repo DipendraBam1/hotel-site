@@ -1,8 +1,8 @@
 import { offers, offersNote } from '../data/offers';
 import { rooms } from '../data/rooms';
 
-const money = new Intl.NumberFormat('en-IN', {
-  style: 'currency', currency: 'INR', maximumFractionDigits: 0,
+const money = new Intl.NumberFormat('en-GB', {
+  style: 'currency', currency: 'GBP', maximumFractionDigits: 0,
 });
 
 export default function OffersSection({ onSelectRoom }) {

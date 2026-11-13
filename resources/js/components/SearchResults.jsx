@@ -1,9 +1,7 @@
 import { formatDate } from "../../utils/validateSearch";
 
-const money = new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
+const money = new Intl.NumberFormat('en-GB', {
+  style: 'currency', currency: 'GBP', maximumFractionDigits: 0,
 });
 
 export default function SearchResults({ result }) {
